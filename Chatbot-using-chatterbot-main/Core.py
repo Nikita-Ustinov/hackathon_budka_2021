@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 from typing import List
+import datetime
 
 
 # vgm_url = 'https://www.cinestar.cz/cz/budejovice/filmy' # 'https://www.visitceskebudejovice.cz/cz/kalendar-akci-ceske-budejovice/2/'
@@ -9,6 +10,19 @@ from typing import List
 # print('Done')
 
 
+class Question:
+    def __init__(self, id, text: str, answers: list):
+        self.id = id
+        self.text = text
+        self.answers = answers   
+
+
+class Event:
+    def __init__(self, name: str, date: datetime, place: str):
+        self.name = name
+        self.date = date   
+        self.place = place   
+        
 
 def get_events():
     events = []
@@ -23,6 +37,14 @@ def get_events():
         print('1_event')
     print('get_events')
 
+def get_q_by_id(id: int, qs) -> Question:
+    output = None
+    for question in qs:
+        if question.id == id:
+            output = question
+
+    return output
+
 
 def parse_skript(path: str):
     with open(path) as f:
@@ -34,37 +56,26 @@ def parse_skript(path: str):
         question = None
         answers = []
         output = []
-        # print(text)
         for i, row in enumerate(text): 
-            # print(f'Row_id: {i}, row: {row}')
             if len(row) == 0:
                 continue
             elif row[0] == 'Q':
-                print(f'1')
                 if question is not None:
-                    print(f'New Q')
                     output.append(Question(question_id, question, answers))
                     question = None
                     answers = []
-                print(row.split(':'))
-                question_id = row.split(':')[1].strip()
+                question_id = int(row.split(':')[1].strip()) + 1
                 question = row.split(':')[2].strip()
             elif row[0] == 'O':
-                print(f'2')
                 assert question is not None
                 answers.append((row.split(':')[1].strip(), row.split(':')[2].strip()))
 
         return output
 
-    qs = _create_questions(contents_1)
-    print('asd')
+    
+    return _create_questions(contents_1)
 
 
-class Question:
-    def __init__(self, id, text: str, answers: list):
-        self.id = id
-        self.text = text
-        self.answers = answers   
 
 # qs = _create_questions(contents_1)
 
