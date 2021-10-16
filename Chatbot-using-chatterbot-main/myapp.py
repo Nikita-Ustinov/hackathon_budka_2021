@@ -34,6 +34,7 @@ def show_parking_dialog(step: int, userText):
     output = None
     try:
         userText = int(userText)
+        userText -= 1
         print(f'S: {step}, userText is int')
     except ValueError:
         print(f'S: {step}, userText is text')

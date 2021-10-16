@@ -89,34 +89,45 @@ href="https://user-images.githubusercontent.com/20112458/49326597-773b7280-f57a-
 
 </head>
 
-<body style="background-image: url(templates/background.png);
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-size: cover;
-            background-size: 100% 100%;">
+<body>
+<img />
+<center>
+<h1>
+<img
+src="https://www.logolynx.com/images/logolynx/s_b9/b9075efd5754f8eb0b28894bbff5f1f0.jpeg"
+alt="CANDICE"
+style="width:50px;height:50px;"
+/>Sunanda's Resume ChatBot
+</h1>
+</center>
 <div class="box"></div>
 <div class="boxed">
-<div  style="margin-right: 0;"  >
-<div id="chatbox" style='width: 30%; margin-right: 0; background-color:(191, 228, 254);'>
-<p class="botText" style="font-size:12px;">
+<div>
+<div id="chatbox">
+<img
+src="https://www.logolynx.com/images/logolynx/s_b9/b9075efd5754f8eb0b28894bbff5f1f0.jpeg"
+alt="CANDICE"
+style="width:50px;height:50px;"
+/>
+<p class="botText">
 <span>Ahoj! Ja jsem Zajda - tvuj assistent. Napis s cim potrebujes poradu. Mas na vyber: Volny cas, Parkovani, Lekar, Urad</span>
 </p>
 </div>
-<div id="userInput" style="margin-right: 0; width: 30%;">
+<div id="userInput">
 <input id="textInput" type="text" name="msg" placeholder="Message" />
 </div>
 </div>
 <script>
         function getBotResponse() {
           var rawText = $("#textInput").val();
-          var userHtml = '<p class="userText" style="font-size:12px;"><span>' + rawText + "</span></p>";
+          var userHtml = '<p class="userText"><span>' + rawText + "</span></p>";
           $("#textInput").val("");
           $("#chatbox").append(userHtml);
           document
             .getElementById("userInput")
             .scrollIntoView({ block: "start", behavior: "smooth" });
           $.get("/get", { msg: rawText }).done(function(data) {
-            var botHtml = '<p class="botText" style="font-size:12px;"><span>' + data + "</span></p>";
+            var botHtml = '<p class="botText"><span>' + data + "</span></p>";
             $("#chatbox").append(botHtml);
             document
               .getElementById("userInput")
