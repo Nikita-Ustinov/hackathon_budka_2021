@@ -16,13 +16,23 @@ class Question:
         self.text = text
         self.answers = answers   
 
+    def get_text(self)->str:
+        out = f'{self.text}'
+        out += '\n\n'
+        for i, a in enumerate(self.answers):
+            out += f'{i+1}){a[0]}'
+            out += '\n\n'
+
+        return out
+
+
 
 class Event:
-    def __init__(self, name: str, date: datetime, place: str):
+    def __init__(self, name: str, date: datetime, place: str=None):
         self.name = name
         self.date = date   
         self.place = place   
-        
+    
 
 def get_events():
     events = []
@@ -31,7 +41,7 @@ def get_events():
     soup = BeautifulSoup(html_text, 'html.parser')
     mydivs = soup.find_all("div", {"class": "row event-row clickable-blank"})
     for row in mydivs:
-        evnet_name = row.find_all("h2")[0].text
+        event_name = row.find_all("h2")[0].text
         content = row.find_all("p")[0].text
         content = row.find_all("p")[0]
         print('1_event')
@@ -64,11 +74,20 @@ def parse_skript(path: str):
                     output.append(Question(question_id, question, answers))
                     question = None
                     answers = []
-                question_id = int(row.split(':')[1].strip()) + 1
+                question_id = int(row.split(':')[1].strip()) 
                 question = row.split(':')[2].strip()
             elif row[0] == 'O':
                 assert question is not None
-                answers.append((row.split(':')[1].strip(), row.split(':')[2].strip()))
+                try:
+                    id = int(row.split(':')[2].strip())
+                except ValueError:
+                    ids = row.split(':')[2:]
+                    id = ''.join(ids)
+                answers.append((row.split(':')[1].strip(), id))
+        
+        output.append(Question(question_id, question, answers))
+        question = None
+        answers = []
 
         return output
 
