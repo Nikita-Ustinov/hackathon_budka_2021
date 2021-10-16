@@ -1,0 +1,26 @@
+Q: 0: Na jak dlouho potřebujete v Českých Budějovicích vaše auto zaparkovat?
+O: Krátkodobé parkování : 1
+O: Dlouhodobé parkování : 2
+
+
+
+Q: 1: Zjistěte, kde najdete nejbližší vhodné parkování. Můžete jej pak zaplatit pohodlně na webu nebo přes mobilní aplikaci.
+O: Zobrazit záchytná a kapacitní parkoviště: https://www.parkovanicb.cz/kratkodobe-parkovani/zachytna-parkoviste
+O: Zobrazit mapu tarifních zón: https://www.parkovanicb.cz/kratkodobe-parkovani/tarifni-zony
+O: Koupit parkovací lístek: 3
+
+
+
+
+Q: 3: Zaplatit parkování můžete na místě v parkomatu. Velmi doporučujeme mobilní aplikaci Sejf, kde je placení opravdu snadné. Zaplatit se dá také přímo online na webu přes jednoduchý formulář. 
+O: Mobilní Aplikace Sejf: Nákup jízdenek na městskou hromadnou dopravu nebo zaplacení parkovacího oprávnění pomocí mobilního telefonu a aplikace sejf. Sejf si stáhnete zdarma pro operační systémy iOS nebo Android. https://www.dpmcb.cz/cestovani-mhd/koupit-jizdenky/mobilni-aplikace-sejf.html
+O: Koupit parkovací lístek na webu: Virtuální parkovací hodiny: https://podk.parkovanicb.cz/VPH/Home/Index/CB/
+
+
+
+
+Q: 2: Proč potřebujete v Českých Budějovicích parkovat často? 
+O: Trvale zde bydlím :  https://www.parkovanicb.cz/dlouhodobe-parkovani/rezidenti
+O: Vlastním zde nemovitost : https://www.parkovanicb.cz/dlouhodobe-parkovani/vlastnici-nemovitosti
+O: Mám zde sídlo podnikání : https://www.parkovanicb.cz/dlouhodobe-parkovani/abonenti
+O: Pečuji o jinou osobu : https://www.parkovanicb.cz/dlouhodobe-parkovani/pecovatele
